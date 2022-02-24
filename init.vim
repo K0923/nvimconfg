@@ -299,7 +299,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 "snazzy
-Plug 'connorholyday/vim-snazzy'
+"Plug 'connorholyday/vim-snazzy'
 
 "Tailwindcc
 Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
@@ -812,24 +812,6 @@ let g:EasyMotion_smartcase = 1
 "nmap 'w <Plug>(easymotion-overwin-w)
 
 " ===
-" === vim-easymotion
-" ===
-let g:EasyMotion_do_mapping = 0
-let g:EasyMotion_do_shade = 0
-let g:EasyMotion_smartcase = 1
-" map ' <Plug>(easymotion-overwin-f2)
-" nmap ' <Plug>(easymotion-overwin-f2)
-"map E <Plug>(easymotion-j)
-"map U <Plug>(easymotion-k)
-"nmap f <Plug>(easymotion-overwin-f)
-"map \; <Plug>(easymotion-prefix)
-"nmap ' <Plug>(easymotion-overwin-f2)
-"map 'l <Plug>(easymotion-bd-jk)
-"nmap 'l <Plug>(easymotion-overwin-line)
-"map  'w <Plug>(easymotion-bd-w)
-"nmap 'w <Plug>(easymotion-overwin-w)
-
-" ===
 " === rainbow
 " ===
 let g:rainbow_active = 1
@@ -872,53 +854,6 @@ noremap <leader>p :AnyJump<CR>
 xnoremap <leader>p :AnyJumpVisual<CR>
 noremap <leader>aj :AnyJumpBack<CR>
 noremap <leader>al :AnyJumpLastResults<CR>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
