@@ -74,7 +74,7 @@
 		"l": ["wait", "expandable?", "expand", "open"],
 		"<cr>": ["wait", "expandable?", "cd", "open"],
 		"I": "open:vsplit",
-		"o": ["wait", "expanded?", "collapse", "expand"],
+		"j": ["wait", "expanded?", "collapse", "expand"],
 		"O": "open:tab",
 		"n": "collapse",
 		"gp": "gotoParent",

@@ -315,6 +315,10 @@ Plug 'theniceboy/nvim-deus'
 Plug 'liuchengxu/eleline.vim'
 Plug 'ojroques/vim-scrollstatus'
 
+" Vscode style
+Plug 'Mofiqul/vscode.nvim'
+
+
 call plug#end()
 " coc setting
 "
@@ -524,7 +528,7 @@ let g:UltiSnipsExpandTrigger = "<c-e>"
 " === Dress up my vim
 " ===
 "set termguicolors " enable true colors support
-let $NVIM_TUI_ENABLE_TRUE_COLOR=2
+"let $NVIM_TUI_ENABLE_TRUE_COLOR=2
 "set background=dark
 "let ayucolor="mirage"
 "let g:oceanic_next_terminal_bold = 1
@@ -533,7 +537,7 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=2
 
 "color dracula
 "color one
-color deus
+"color deus
 "color gruvbox
 "let ayucolor="light"
 "color ayu
@@ -541,9 +545,22 @@ color deus
 "set background=light
 "set cursorcolumn
 
-hi NonText ctermfg=gray guifg=grey10
+"hi NonText ctermfg=gray guifg=grey10
 "hi SpecialKey ctermfg=blue guifg=grey70t
 
+" vscode style
+" Vim-Script:
+" For dark theme
+let g:vscode_style = "dark"
+" For light theme
+"let g:vscode_style = "light"
+" Enable transparent background.
+let g:vscode_transparency = 0.8
+" Enable italic comment
+let g:vscode_italic_comment = 1
+" Disable nvim-tree background color 
+let g:vscode_disable_nvimtree_bg = v:true 
+colorscheme vscode
 " ===
 " === Compile function
 " ===
@@ -681,8 +698,8 @@ let g:VM_maps                       = {}
 let g:VM_custom_motions             = {'j':'h', 'k':'j','i':'k'}
 let g:VM_maps['i']                  = 'h'
 let g:VM_maps['I']                  = 'H'
-let g:VM_maps['Find Under']         = '<C-k>'
-let g:VM_maps['Find Subword Under'] = '<C-k>'
+let g:VM_maps['Find Under']         = '<C-j>'
+let g:VM_maps['Find Subword Under'] = '<C-j>'
 "let g:VM_maps['Find Next']          = ''
 "let g:VM_maps['Find Prev']          = ''
 "let g:VM_maps['Remove Region']      = 'q'
