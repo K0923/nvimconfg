@@ -63,6 +63,7 @@ noremap - nzz
 noremap = Nzz
 noremap <Leader><CR> :nohlsearch<CR>
 
+nnoremap <c-[> <c-[> 
 
 nmap <Space>0 :split<CR>
 nmap <Space>9 :vsplit<CR>
@@ -72,11 +73,11 @@ map t0 :+tabnext<CR>
 noremap <C-o> <C-i>
 noremap <C-i> <C-o>
 
-nmap <Space>j <C-w>h
-nmap <Space>k <C-w>j
-nmap <Space>i <C-w>k
-nmap <Space>l <C-w>l
-
+nmap <leader>j <C-w>h
+nmap <leader>k <C-w>j
+nmap <leader>i <C-w>k
+nmap <leader>l <C-w>l
+nmap <leader>q <C-w>q
 
 map s <nop>
 map S :w<CR>
@@ -219,7 +220,7 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 " Python
 Plug 'Vimjas/vim-python-pep8-indent', { 'for' :['python', 'vim-plug'] }
-Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :['python', 'vim-plug'] }
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 "Plug 'vim-scripts/indentpython.vim', { 'for' :['python', 'vim-plug'] }
 "Plug 'plytophogy/vim-virtualenv', { 'for' :['python', 'vim-plug'] }
 Plug 'tweekmonster/braceless.vim', { 'for' :['python', 'vim-plug'] }
@@ -520,11 +521,19 @@ map <LEADER>sc :set spell!<CR>
 map <leader><leader> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
 " UltiSnips
-let g:UltiSnipsJumpForwardTrigger = "<c-k>"
+let g:UltiSnipsJumpForwardTrigger = "<c-e>"
 let g:UltiSnipsExpandTrigger = "<c-e>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-w>"
+imap <c-e> <Plug>(coc-snippets-expand-jump)
 
-
-" ===
+" Semshi
+"let g:semshi#excluded_buffers = ['*']
+"noremap <leader>ss :Semshi toggle
+let g:python3_host_prog = substitute(system("which python3"), '\n\+$', '', '')
+"
+"
+"
+"" ===
 " === Dress up my vim
 " ===
 "set termguicolors " enable true colors support
@@ -674,7 +683,7 @@ let g:Lf_UseCache = 0
 " ===
 " === Undotree
 " ===
-noremap L :UndotreeToggle<CR>
+noremap P :UndotreeToggle<CR>
 let g:undotree_DiffAutoOpen = 1
 let g:undotree_SetFocusWhenToggle = 1
 let g:undotree_ShortIndicators = 1
@@ -764,14 +773,14 @@ let g:calendar_google_task = 1
 augroup calendar-mappings
 	autocmd!
 	" diamond cursor
-	autocmd FileType calendar nmap <buffer> u <Plug>(calendar_up)
-	autocmd FileType calendar nmap <buffer> n <Plug>(calendar_left)
-	autocmd FileType calendar nmap <buffer> e <Plug>(calendar_down)
-	autocmd FileType calendar nmap <buffer> i <Plug>(calendar_right)
-	autocmd FileType calendar nmap <buffer> <c-u> <Plug>(calendar_move_up)
-	autocmd FileType calendar nmap <buffer> <c-n> <Plug>(calendar_move_left)
-	autocmd FileType calendar nmap <buffer> <c-e> <Plug>(calendar_move_down)
-	autocmd FileType calendar nmap <buffer> <c-i> <Plug>(calendar_move_right)
+	autocmd FileType calendar nmap <buffer> i <Plug>(calendar_up)
+	autocmd FileType calendar nmap <buffer> j <Plug>(calendar_left)
+	autocmd FileType calendar nmap <buffer> k <Plug>(calendar_down)
+	autocmd FileType calendar nmap <buffer> l <Plug>(calendar_right)
+	autocmd FileType calendar nmap <buffer> <c-i> <Plug>(calendar_move_up)
+	autocmd FileType calendar nmap <buffer> <c-j> <Plug>(calendar_move_left)
+	autocmd FileType calendar nmap <buffer> <c-k> <Plug>(calendar_move_down)
+	autocmd FileType calendar nmap <buffer> <c-l> <Plug>(calendar_move_right)
 	autocmd FileType calendar nmap <buffer> k <Plug>(calendar_start_insert)
 	autocmd FileType calendar nmap <buffer> K <Plug>(calendar_start_insert_head)
 	" unmap <C-n>, <C-p> for other plugins
@@ -856,6 +865,8 @@ noremap to :+tabnext<CR>
 " Move the tabs with tmn and tmi
 noremap tmi :-tabmove<CR>
 noremap tmo :+tabmove<CR>
+" Close the tab with tq
+noremap tq  :tabc<CR>
 
 " Opening a terminal window
 noremap <LEADER>/ :set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>
@@ -872,6 +883,9 @@ xnoremap <leader>p :AnyJumpVisual<CR>
 noremap <leader>aj :AnyJumpBack<CR>
 noremap <leader>al :AnyJumpLastResults<CR>
 
+" ===
+" === semshi
+" ===
 
 
 
