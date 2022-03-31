@@ -319,6 +319,8 @@ Plug 'ojroques/vim-scrollstatus'
 " Vscode style
 Plug 'Mofiqul/vscode.nvim'
 
+" Find and replace
+Plug 'brooth/far.vim'
 
 call plug#end()
 " coc setting
